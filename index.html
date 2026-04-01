@@ -288,6 +288,7 @@
     /* === Marquee === */
     .marquee-wrap {
       overflow: hidden;
+      contain: layout style paint;
       mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
       -webkit-mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
     }
@@ -497,7 +498,10 @@
     .verify-card:hover {
       transform: translateY(-2px);
       border-color: var(--accent);
-      box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+    }
+    .dark .verify-card:hover {
+      box-shadow: 0 8px 24px rgba(0,0,0,0.3);
     }
     .accuracy-bar {
       height: 6px;
@@ -1505,7 +1509,7 @@
       let searchQuery = '';
       let sortField = 'num';
       let sortAsc = true;
-      let openIdx = -1;
+      let openRow = null;
       let rows = []; // {tr, expandTr, p, idx, name, visible, isPending}
 
       // Pill counts (include pending)
@@ -1548,18 +1552,18 @@
         expandTr.className = 'expand-row';
         expandTr.style.display = 'none';
         const expandTd = document.createElement('td');
-        expandTd.colSpan = 6;
+        expandTd.colSpan = 5;
         expandTr.appendChild(expandTd);
 
-        tr.addEventListener('click', () => toggleExpand(i));
+        const rowObj = { tr, expandTr, expandTd, p, idx: i, name, visible: true, isPending: false };
+        tr.addEventListener('click', () => toggleExpand(rowObj));
         tr.addEventListener('keydown', (e) => {
-          if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggleExpand(i); }
+          if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggleExpand(rowObj); }
         });
 
         tbody.appendChild(tr);
         tbody.appendChild(expandTr);
-
-        rows.push({ tr, expandTr, expandTd, p, idx: i, name, visible: true, isPending: false });
+        rows.push(rowObj);
       });
 
       // Add pending models as gray non-expandable rows
@@ -1568,6 +1572,7 @@
         tr.className = 'prompt-row';
         tr.style.opacity = '0.5';
         tr.style.cursor = 'default';
+        tr.setAttribute('aria-disabled', 'true');
         tr.innerHTML =
           '<td class="font-mono text-xs" style="color:var(--text-muted);">' + (prompts.length + i + 1) + '</td>' +
           '<td class="font-medium" style="color:var(--text-muted);">' + m.name + '</td>' +
@@ -1579,7 +1584,7 @@
         expandTr.className = 'expand-row';
         expandTr.style.display = 'none';
         const expandTd = document.createElement('td');
-        expandTd.colSpan = 6;
+        expandTd.colSpan = 5;
         expandTr.appendChild(expandTd);
 
         tbody.appendChild(tr);
@@ -1588,30 +1593,25 @@
         rows.push({ tr, expandTr, expandTd, p: { category: 'Pending', provider: m.provider, consistency: 0, num: prompts.length + i + 1 }, idx: prompts.length + i, name: m.name, visible: true, isPending: true });
       });
 
-      function toggleExpand(idx) {
-        const row = rows[idx];
+      function toggleExpand(row) {
         if (!row || !row.visible || row.isPending) return;
 
-        if (openIdx === idx) {
-          // Close
+        if (openRow === row) {
           row.tr.classList.remove('open');
           row.expandTr.style.display = 'none';
-          openIdx = -1;
+          openRow = null;
           return;
         }
 
-        // Close previous
-        if (openIdx >= 0 && rows[openIdx]) {
-          rows[openIdx].tr.classList.remove('open');
-          rows[openIdx].expandTr.style.display = 'none';
+        if (openRow) {
+          openRow.tr.classList.remove('open');
+          openRow.expandTr.style.display = 'none';
         }
 
-        // Open
         row.tr.classList.add('open');
         row.expandTr.style.display = '';
-        openIdx = idx;
+        openRow = row;
 
-        // Lazy render
         if (!row.expandTd.dataset.rendered) {
           renderExpand(row.expandTd, row.p);
           row.expandTd.dataset.rendered = '1';
@@ -1706,10 +1706,10 @@
         searchQuery = searchInput.value.trim().toLowerCase();
 
         // Close any open expand
-        if (openIdx >= 0 && rows[openIdx]) {
-          rows[openIdx].tr.classList.remove('open');
-          rows[openIdx].expandTr.style.display = 'none';
-          openIdx = -1;
+        if (openRow) {
+          openRow.tr.classList.remove('open');
+          openRow.expandTr.style.display = 'none';
+          openRow = null;
         }
 
         // Build filtered list
@@ -1807,10 +1807,10 @@
           th.querySelector('.sort-arrow').textContent = sortAsc ? '\u25B2' : '\u25BC';
 
           // Close expand
-          if (openIdx >= 0 && rows[openIdx]) {
-            rows[openIdx].tr.classList.remove('open');
-            rows[openIdx].expandTr.style.display = 'none';
-            openIdx = -1;
+          if (openRow) {
+            openRow.tr.classList.remove('open');
+            openRow.expandTr.style.display = 'none';
+            openRow = null;
           }
 
           // Sort rows
@@ -1868,11 +1868,11 @@
             searchInput.blur();
             return;
           }
-          if (openIdx >= 0 && rows[openIdx]) {
-            rows[openIdx].tr.classList.remove('open');
-            rows[openIdx].expandTr.style.display = 'none';
-            rows[openIdx].tr.focus();
-            openIdx = -1;
+          if (openRow) {
+            openRow.tr.classList.remove('open');
+            openRow.expandTr.style.display = 'none';
+            openRow.tr.focus();
+            openRow = null;
           }
           return;
         }
@@ -1898,6 +1898,7 @@
       });
 
       // === Render UCB formula with KaTeX ===
+      let ucbRetries = 0;
       function renderUCB() {
         const el = document.getElementById('ucbFormula');
         if (el && window.katex) {
@@ -1906,7 +1907,7 @@
             el,
             { displayMode: true, throwOnError: false }
           );
-        } else {
+        } else if (++ucbRetries < 50) {
           setTimeout(renderUCB, 100);
         }
       }
