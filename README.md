@@ -4,7 +4,7 @@
 
 # System Prompt Open
 
-### Extracted System Prompts from Frontier LLMs
+### Your system prompt was never a secret.
 
 [![arXiv](https://img.shields.io/badge/arXiv-2601.21233-b31b1b.svg)](https://arxiv.org/abs/2601.21233)
 [![Gallery](https://img.shields.io/badge/Gallery-Live%20Demo-22D3BB.svg)](https://x-zheng16.github.io/System-Prompt-Open/)
@@ -12,8 +12,6 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Maintained](https://img.shields.io/badge/Maintained-yes-green.svg)](https://github.com/x-zheng16/System-Prompt-Open/commits/)
 [![GitHub Stars](https://img.shields.io/github/stars/x-zheng16/System-Prompt-Open?style=social)](https://github.com/x-zheng16/System-Prompt-Open)
-
-**We asked. They answered.**
 
 [Live Gallery](https://x-zheng16.github.io/System-Prompt-Open/) | [Paper](https://arxiv.org/abs/2601.21233) | [JustAsk Code](https://github.com/x-zheng16/JustAsk)
 
@@ -23,6 +21,10 @@
 
 An open database of system prompts extracted from **45 commercial LLMs** using [JustAsk](https://github.com/x-zheng16/JustAsk), a self-evolving code agent framework.
 Verified at **85--95% accuracy** against leaked Claude Code source.
+
+> [!CAUTION]
+> **Research use only.** System Prompt Open is released exclusively for academic safety research, responsible disclosure, and evaluation of LLM security.
+> We do not condone or permit any use of these materials for unauthorized extraction, prompt theft, or exploitation of commercial systems.
 
 ## Gallery
 
@@ -38,12 +40,31 @@ Browse extracted system prompts interactively: **[x-zheng16.github.io/System-Pro
 Claude Code's source was leaked via `.map` file in the npm registry (March 2026).
 We compared it against our JustAsk extractions from January 2026 -- **two months before the leak**.
 
-| Agent | Accuracy | Gap |
-|:------|:--------:|:----|
-| Explore Subagent | **95%** | Only missed `pip install` in bash restrictions |
-| Plan Subagent | **93%** | Minor output format embellishment |
-| General-Purpose Subagent | **90%** | Missed completeness directive |
-| Main Agent | **85%** | Missed 2 entire sections |
+| Agent              | Accuracy | Gap                                      |
+|:-------------------|:--------:|:-----------------------------------------|
+| Explore Subagent   | **95%**  | Only missed `pip install` in bash restrictions |
+| Plan Subagent      | **93%**  | Minor output format embellishment        |
+| General-Purpose    | **90%**  | Missed completeness directive            |
+| Main Agent         | **85%**  | Missed 2 entire sections                 |
+
+## How to Contribute
+
+| Step          | What to do                                                                                         |
+|:--------------|:---------------------------------------------------------------------------------------------------|
+| 1. Extract    | Use [JustAsk](https://github.com/x-zheng16/JustAsk) or your own method to extract a system prompt |
+| 2. Verify     | Run multiple extractions and compute self-consistency                                              |
+| 3. Submit     | [Open an Issue](https://github.com/x-zheng16/System-Prompt-Open/issues/new?template=report-extraction.md) with the model name, extracted prompt, and consistency score |
+
+> [!IMPORTANT]
+> We handle redaction before publishing. Do not worry about masking sensitive content in your submission.
+
+## Updates
+
+| Date    | Update                                                                           |
+|:--------|:---------------------------------------------------------------------------------|
+| 2026-03 | Ground-truth verification: Claude Code extractions match leaked source at **85-95%** |
+| 2026-02 | Open-sourced **System Prompt Open** gallery with 45 extracted system prompts     |
+| 2026-01 | Paper and **JustAsk** framework released. Initial extraction of 45 frontier LLMs |
 
 ## Related Work
 
