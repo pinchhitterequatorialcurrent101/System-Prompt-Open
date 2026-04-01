@@ -26,6 +26,14 @@ Verified at **85--95% accuracy** against leaked Claude Code source.
 > **Research use only.** System Prompt Open is released exclusively for academic safety research, responsible disclosure, and evaluation of LLM security.
 > We do not condone or permit any use of these materials for unauthorized extraction, prompt theft, or exploitation of commercial systems.
 
+## Latest News
+
+| Date       | Update                                                                                       |
+|:-----------|:---------------------------------------------------------------------------------------------|
+| 2026-04-01 | Open-sourced **System Prompt Open** with 45 extracted system prompts and Live Gallery         |
+| 2026-04-01 | Gallery redesigned with red team theme, pagination, stat cards, and search                    |
+| 2026-04-01 | Ground-truth verification: Claude Code extractions match leaked source at **85-95%**          |
+
 ## Gallery
 
 Browse extracted system prompts interactively: **[x-zheng16.github.io/System-Prompt-Open](https://x-zheng16.github.io/System-Prompt-Open/)**
@@ -57,14 +65,6 @@ We compared it against our JustAsk extractions from January 2026 -- **two months
 
 > [!IMPORTANT]
 > We handle redaction before publishing. Do not worry about masking sensitive content in your submission.
-
-## Updates
-
-| Date    | Update                                                                           |
-|:--------|:---------------------------------------------------------------------------------|
-| 2026-03 | Ground-truth verification: Claude Code extractions match leaked source at **85-95%** |
-| 2026-02 | Open-sourced **System Prompt Open** gallery with 45 extracted system prompts     |
-| 2026-01 | Paper and **JustAsk** framework released. Initial extraction of 45 frontier LLMs |
 
 ## Related Projects
 
